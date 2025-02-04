@@ -1,29 +1,63 @@
-# Create T3 App
+# 🚀 PithyLit: PDF Summarizer for Academic Papers
 
-This is a [T3 Stack](https://create.t3.gg/) project bootstrapped with `create-t3-app`.
+**Transform Lengthy Research Papers into Concise Insights**  
+*Powered by Local AI (Ollama + deepseek-r1) • Built with T3 Stack*
 
-## What's next? How do I make an app with this?
+---
 
-We try to keep this project as simple as possible, so you can start with just the scaffolding we set up for you, and add additional things later when they become necessary.
+## 📌 Overview
+**PithyLit** is an open-source tool designed to summarize academic PDF articles using local AI. Built with:
+- **Frontend**: Next.js (T3 Stack) + TypeScript + Tailwind CSS  
+- **Backend**: tRPC + Prisma ORM  
+- **Database**: PostgreSQL  
+- **AI Engine**: Ollama with the `deepseek-r1` model (no cloud dependencies!)  
 
-If you are not familiar with the different technologies used in this project, please refer to the respective docs. If you still are in the wind, please join our [Discord](https://t3.gg/discord) and ask for help.
+🔗 [Demo](#) | 💻 [My Portfolio](#)  
 
-- [Next.js](https://nextjs.org)
-- [NextAuth.js](https://next-auth.js.org)
-- [Prisma](https://prisma.io)
-- [Drizzle](https://orm.drizzle.team)
-- [Tailwind CSS](https://tailwindcss.com)
-- [tRPC](https://trpc.io)
 
-## Learn More
+---
 
-To learn more about the [T3 Stack](https://create.t3.gg/), take a look at the following resources:
+## ✨ Features
+- 📤 **PDF Upload** with drag-and-drop functionality
+- 🧠 **AI-Powered Summarization** (Ollama + deepseek-r1)
+- 🗃️ **Summary History** (Stored in PostgreSQL)
+- 🔍 **Key Point Highlighting** from articles
+- 🛡️ 100% Privacy (AI runs locally)
+- ⚡ Responsive & Dark Mode Support
 
-- [Documentation](https://create.t3.gg/)
-- [Learn the T3 Stack](https://create.t3.gg/en/faq#what-learning-resources-are-currently-available) — Check out these awesome tutorials
+---
 
-You can check out the [create-t3-app GitHub repository](https://github.com/t3-oss/create-t3-app) — your feedback and contributions are welcome!
+## 🛠️ Tech Stack
+| Category       | Technologies                                                                                     |
+|----------------|--------------------------------------------------------------------------------------------------|
+| **Frontend**   | ![Next.js](https://img.shields.io/badge/Next.js-000?style=flat&logo=next.js&logoColor=white) ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat&logo=typescript&logoColor=white) ![Tailwind](https://img.shields.io/badge/Tailwind-06B6D4?style=flat&logo=tailwindcss) |
+| **Backend**    | ![tRPC](https://img.shields.io/badge/tRPC-2596BE?style=flat&logo=trpc&logoColor=white) ![Prisma](https://img.shields.io/badge/Prisma-2D3748?style=flat&logo=prisma&logoColor=white) |
+| **Database**   | ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=flat&logo=postgresql&logoColor=white) |
+| **AI**         | ![Ollama](https://img.shields.io/badge/Ollama-FF6C37?style=flat&logo=ollama&logoColor=white) `deepseek-r1` |
+| **Tools**      | ![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat&logo=docker&logoColor=white) ![ESLint](https://img.shields.io/badge/ESLint-4B32C3?style=flat&logo=eslint) |
 
-## How do I deploy this?
+---
 
-Follow our deployment guides for [Vercel](https://create.t3.gg/en/deployment/vercel), [Netlify](https://create.t3.gg/en/deployment/netlify) and [Docker](https://create.t3.gg/en/deployment/docker) for more information.
+## 🛠️ Installation
+**Prerequisites**:  
+- Node.js v18+
+- PostgreSQL
+- Ollama (installed & `deepseek-r1` model downloaded)
+
+```bash
+# Clone repository
+git clone https://github.com/NikolausSatria/PithyLit.git
+cd pithylit
+
+# Install dependencies
+npm install
+
+# Setup database
+npx prisma generate
+npx prisma migrate dev
+
+# Run Ollama (in a separate terminal)
+ollama serve
+
+# Start the application
+npm run dev
